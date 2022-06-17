@@ -1,0 +1,16 @@
+{% extends 'myapp/index.html' %} {% block content %}
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <br />
+        <a href="{% url 'pinjam_mahasiswa' %}"><h5>Peminjaman Mahasiswa</h5></a>
+        <a href="{% url 'pinjam_non_mahasiswa' %}"
+          ><h5>Data Penjimanan Non Mahasiswa</h5></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

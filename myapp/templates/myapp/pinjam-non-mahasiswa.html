@@ -1,0 +1,36 @@
+{% extends 'myapp/index.html' %} {% block content %}
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Data Peminjaman Non Mahasiswa</h2>
+        <a href="#" class="btn btn-primary mb-3">Tambah Data</a>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No Pinjam</th>
+              <th scope="col">Tanggal Peminjaman</th>
+              <th scope="col">Tanggal Pengembalian</th>
+              <th scope="col">No Anggota</th>
+              <th scope="col">Kode Petugas</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for pinjamN in list_pinjam_non_mahasiswa %}
+            <tr>
+              <td>{{ pinjamN.nopinjamn }}</td>
+              <td>{{ pinjamN.tglpinjam }}</td>
+              <td>{{ pinjamN.tglkembali }}</td>
+              <td>{{ pinjamN.noanggotan }}</td>
+              <td>{{ pinjamN.kodepetugas }}</td>
+              <td><a href="" class="btn btn-success">Detail</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

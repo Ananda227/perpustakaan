@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block content %}
+
+<form method="POST" action="create" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="form-group row">
+          <label for="kodebuku" class="col-2 col-form-label">Kode Buku</label> 
+          <div class="col-8">
+            <input id="kodebuku" name="kodebuku" placeholder="Kode Buku" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="judul" class="col-2 col-form-label">Judul</label> 
+          <div class="col-8">
+            <input id="judul" name="judul" placeholder="Judul" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="penerbit" class="col-2 col-form-label">Penerbit</label> 
+          <div class="col-8">
+            <input id="penerbit" name="penerbit" type="text" placeholder="Penerbit" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="pengarang" class="col-2 col-form-label">Pengarang</label> 
+          <div class="col-8">
+            <input id="pengarang" name="pengarang" placeholder="Pengarang" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="thnterbit" class="col-2 col-form-label">Tahun Terbit</label> 
+          <div class="col-8">
+            <input id="thnterbit" name="thnterbit" placeholder="Tahun Terbit" type="text" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="kotaterbit" class="col-2 col-form-label">Kota Terbit</label> 
+          <div class="col-8">
+            <input id="kotaterbit" name="kotaterbit" type="text" class="form-control" placeholder="Kota Terbit" required="required">
+          </div>
+        </div> 
+        <div class="form-group row">
+          <label for="bahasa" class="col-2 col-form-label">Bahasa</label> 
+          <div class="col-8">
+            <input id="bahasa" name="bahasa" type="text" placeholder="Bahasa" class="form-control" required="required">
+          </div>
+        </div> 
+        <div class="form-group row">
+          <label for="edisi" class="col-2 col-form-label">Edisi</label> 
+          <div class="col-8">
+            <input id="edisi" name="edisi" type="text" placeholder="Edisi" class="form-control" required="required">
+          </div>
+        </div> 
+        <div class="form-group row">
+          <label for="foto" class="col-2 col-form-label">Poto</label> 
+          <div class="col-8">
+            <input id="nip" name="poto" placeholder="" type="file" class="form-control" >
+          </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'index.html' %} {% block content %} {% load static %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3" style="max-width: 100%">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">
+                Anggota Mahasiswa Perpustakaan STT PLN Jakarta
+              </h5>
+              <br />
+
+              <p class="card-text">No Anggota :</p>
+              <p class="card-text">NIM :</p>
+              <p class="card-text">Jurusan :</p>
+              <p class="card-text">TTL :</p>
+              <p class="card-text">Alamat :</p>
+              <p class="card-text">Angkatan :</p>
+              <p class="card-text">No Telepon :</p>
+              <p class="card-text">Nama Ortu :</p>
+              <p class="card-text">Alamat Ortu :</p>
+              <p class="card-text">No Telepon :</p>
+              <br />
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+          <div class="col-md-3">
+            <div class="row g-0">
+              <div class="col-md-7">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <img
+                  src="{% static 'img/2.jpg' %}"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

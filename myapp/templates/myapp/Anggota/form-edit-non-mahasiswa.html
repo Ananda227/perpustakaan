@@ -1,0 +1,119 @@
+
+{% extends 'base.html' %} {% block content %}
+
+{% for row in edit_non_mahasiswa %}
+<form method="POST" action="" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="form-group row">
+          <label for="no_anggota" class="col-2 col-form-label">No Anggota</label> 
+          <div class="col-8">
+            <input id="no_anggota" name="no_anggota" value="{{ row.noanggotan }}" placeholder="No Anggota" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nip" class="col-2 col-form-label">NIP</label> 
+          <div class="col-8">
+            <input id="nip" name="nim" placeholder="NIM" value="{{ row.nip }}" type="text" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nama_lengkap" class="col-2 col-form-label">Nama Lengkap</label> 
+          <div class="col-8">
+            <input id="nama_lengkap" name="nama_lengkap" value="{{ row.namaanggota }}" placeholder="Nama Lengkap" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2">Jenis Kelamin</label> 
+          <div class="col-8">
+            {% for jk in 'LP' %}
+            <div class="form-check form-check-inline">
+           
+              {% if jk == row.jeniskelamin %}
+              <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="{{ jk }}" checked>{{ jk }}
+              {% else %}
+              <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="{{ jk }}" >{{ jk }}
+              {% endif %}
+              
+             
+            </div>
+            {% endfor %}
+            </div>
+          </div>
+        
+        <div class="form-group row">
+          <label for="select" class="col-2 col-form-label">Jabatan</label> 
+          <div class="col-8">
+            <select id="select" name="jurusan" class="custom-select" required="required">
+              {% for jur in list_mahasiswa %}
+              {% if jur.jurusan == row.jurusan %}
+                <option value="{{ jur.jurusan }}" selected>{{ jur.jurusan }}</option>
+              {% else %}
+                <option value="{{ jur.jurusan }}">{{ jur.jurusan }}</option>
+              {% endif %}
+              {% endfor %}
+              <option value="Dosen">Dosen</option>
+              <option value="Dekan">Dekan</option>
+              <option value="Manusia Biasa">Manusia Biasa</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tmp_lahir" class="col-2 col-form-label">Tempat Lahir</label> 
+          <div class="col-8">
+            <input id="tmp_lahir" name="tmp_lahir" value="{{ row.tempatlahir }}" placeholder="Tempat Lahir" type="text" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tgl_lahir" class="col-2 col-form-label">Tanggal Lahir</label> 
+          <div class="col-8">
+            <input id="tgl_lahir" name="tgl_lahir" type="date" value="{{ row.tanggallahir }}" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="alamat" class="col-2 col-form-label">Alamat</label> 
+          <div class="col-8">
+            <textarea id="alamat" name="alamat" cols="40" rows="5" class="form-control" required="required">{{ row.alamat }}</textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Kode_pos" class="col-2 col-form-label">Kode Pos</label> 
+          <div class="col-8">
+            <input id="Kode_pos" name="Kode_pos" placeholder="Kode Post" type="text" value="{{ row.kodepos }}" required="required" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="no_telp" class="col-2 col-form-label">No telepon</label> 
+          <div class="col-8">
+            <input id="no_telp" name="no_telp" placeholder="No Telepon" type="text" value="{{ row.notelp }}" class="form-control" required="required">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tgl_daftar" class="col-2 col-form-label">Tahun Masuk</label> 
+          <div class="col-8">
+            <input id="tgl_daftar" name="tgl_daftar" type="text" class="form-control" value="{{ row.tgldaftar}}" placeholder="Angkatan" required="required">
+          </div>
+        </div> 
+        <div class="form-group row">
+          <label for="foto" class="col-2 col-form-label">Poto</label> 
+          <div class="col-8">
+            <input id="nip" name="poto" placeholder="" type="file" class="form-control" >
+          </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+{% endfor %}
+
+
+{% endblock %}

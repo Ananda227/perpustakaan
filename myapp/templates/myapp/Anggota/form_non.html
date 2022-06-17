@@ -1,0 +1,200 @@
+{% extends 'base.html' %} {% block content %}
+
+<form method="POST" action="create" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="form-group row">
+          <label for="no_anggota" class="col-2 col-form-label"
+            >No Anggota</label
+          >
+          <div class="col-8">
+            <input
+              id="no_anggota"
+              name="no_anggota"
+              placeholder="No Anggota"
+              type="text"
+              required="required"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nip" class="col-2 col-form-label">NIP</label>
+          <div class="col-8">
+            <input
+              id="nip"
+              name="nip"
+              placeholder="NIP"
+              type="text"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nama_lengkap" class="col-2 col-form-label"
+            >Nama Lengkap</label
+          >
+          <div class="col-8">
+            <input
+              id="nama_lengkap"
+              name="nama_lengkap"
+              placeholder="Nama Lengkap"
+              type="text"
+              required="required"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-2">Jenis Kelamin</label>
+          <div class="col-8">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="jenis_kelamin"
+                id="jenis_kelamin"
+                value="Laki-laki"
+                required="required"
+              />
+              <label class="form-check-label" for="jenis_kelamin0">L</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="jenis_kelamin"
+                id="jenis_kelamin"
+                value="Perempuan"
+                required="required"
+              />
+              <label class="form-check-label" for="jenis_kelamin1">P</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="select" class="col-2 col-form-label">Jabatan</label>
+          <div class="col-8">
+            <select
+              id="select"
+              name="jabatan"
+              class="custom-select"
+              required="required"
+            >
+              <option value="Dosen">Dosen</option>
+              <option value="Dekan">Dekan</option>
+              <option value="Manusia Biasa">Manusia Biasa</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tmp_lahir" class="col-2 col-form-label"
+            >Tempat Lahir</label
+          >
+          <div class="col-8">
+            <input
+              id="tmp_lahir"
+              name="tmp_lahir"
+              placeholder="Tempat Lahir"
+              type="text"
+              required="required"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tgl_lahir" class="col-2 col-form-label"
+            >Tanggal Lahir</label
+          >
+          <div class="col-8">
+            <input
+              id="tgl_lahir"
+              name="tgl_lahir"
+              type="date"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="alamat" class="col-2 col-form-label">Alamat</label>
+          <div class="col-8">
+            <textarea
+              id="alamat"
+              name="alamat"
+              cols="40"
+              rows="5"
+              class="form-control"
+              required="required"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Kode_pos" class="col-2 col-form-label">Kode Pos</label>
+          <div class="col-8">
+            <input
+              id="Kode_pos"
+              name="Kode_pos"
+              placeholder="Kode Post"
+              type="text"
+              required="required"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="no_telp" class="col-2 col-form-label">No telepon</label>
+          <div class="col-8">
+            <input
+              id="no_telp"
+              name="no_telp"
+              placeholder="No Telepon"
+              type="text"
+              class="form-control"
+              required="required"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tgl_daftar" class="col-2 col-form-label"
+            >Tanggal Masuk</label
+          >
+          <div class="col-8">
+            <input
+              id="tgl_daftar"
+              name="tgl_daftar"
+              type="text"
+              class="form-control"
+              required="required"
+              placeholder="Tanggal Masuk"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="foto" class="col-2 col-form-label">Poto</label>
+          <div class="col-8">
+            <input
+              id="nip"
+              name="poto"
+              placeholder=""
+              type="file"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <hr />
+        <div class="form-group row">
+          <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

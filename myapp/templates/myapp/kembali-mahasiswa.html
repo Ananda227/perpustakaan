@@ -1,0 +1,34 @@
+{% extends 'myapp/index.html' %} {% block content %}
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Data Pengembalian Non Mahasiswa</h2>
+        <a href="#" class="btn btn-primary mb-3">Tambah Data</a>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No Kembali</th>
+              <th scope="col">No pinjam</th>
+              <th scope="col">Tanggal Dikembalikan</th>
+              <th scope="col">Kode Petugas</th>
+              <th scope="col">Denda</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for kembaliM in list_kembali_mahasiswa %}
+            <tr>
+              <td>{{ KembaliM.nokembalim }}</td>
+              <td>{{ KembaliM.nopinjamm }}</td>
+              <td>{{ kembaliM.tglkembali }}</td>
+              <td>{{ kembaliM.kodepetugas }}</td>
+              <td>{{ kembaliM.denda }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'myapp/index.html' %} {% block content %}
+
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Data Anggota Non Mahasiswa</h2>
+        <a href="{% url 'form_non_mahasiswa' %}" class="btn btn-primary mb-3"
+          >Tambah Data</a
+        >
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">No Anggota</th>
+              <th scope="col">Nama Lengkap</th>
+              <th scope="col">NIP</th>
+              <th scope="col">Jenis Kelamin</th>
+              <th scope="col">Tempat Lahir</th>
+              <th scope="col">Tanggal Lahir</th>
+              <th scope="col">Jabatan</th>
+              <th scope="col">Tanggal Daftar</th>
+              <th scope="col">Foto</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for non_mahasiswa in list_non_mahasiswa %}
+            <tr>
+              <td>{{ non_mahasiswa.noanggotan }}</td>
+              <td>{{ non_mahasiswa.namaanggota }}</td>
+              <td>{{ non_mahasiswa.nip }}</td>
+              <td>{{ non_mahasiswa.jeniskelamin }}</td>
+              <td>{{ non_mahasiswa.tempatlahir }}</td>
+              <td>{{ non_mahasiswa.tanggallahir }}</td>
+              <td>{{ non_mahasiswa.jabatan }}</td>
+              <td>{{ non_mahasiswa.tgldaftar }}</td>
+              <td>{{ non_mahasiswa.poto }}</td>
+              <td>
+                <a
+                  href="edit/{{ non_mahasiswa.noanggotan }}"
+                  class="btn btn-warning"
+                  >Edit</a
+                >
+                <br />
+                &NonBreakingSpace;
+                <a
+                  href="delete/{{ non_mahasiswa.noanggotan }}"
+                  class="btn btn-danger"
+                  onclick="return confirm('Hapus Data Anggota ?')"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

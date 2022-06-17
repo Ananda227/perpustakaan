@@ -1,0 +1,113 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <center><h4>Form Peminjaman Mahasiswa</h4></center>
+      <br />
+      <form class="row g-3" action="create" method="POST">
+        {% csrf_token %}
+        <div class="col-md-6">
+          <label for="nopinjamm" class="form-label">No Pinjam</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nopinjam"
+            placeholder="No Pinjam"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="noanggota" class="form-label">No Anggota</label>
+          <input
+            type="text"
+            class="form-control"
+            name="noanggotam"
+            placeholder="No Pinjam"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="nopinjamm" class="form-label">Tanggal Pinjam</label>
+          <input
+            type="date"
+            class="form-control"
+            name="tglpjm"
+            placeholder="Tanggal Pinjam"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label" for="noanggota">Kode Petugas</label>
+          <select class="form-select" id="specificSizeSelect" name="kdpetugas">
+            <option selected>kode Petugas</option>
+            <option value="p-01">P-01</option>
+            <option value="p-01">P-02</option>
+            <option value="p-01">P-03</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="nopinjamm" class="form-label">Tanggal Kembali</label>
+          <input
+            type="date"
+            class="form-control"
+            name="tglkmb"
+            placeholder="Tanggal Kembali"
+          />
+        </div>
+        <hr />
+
+        <div class="row g-3">
+          <div class="col-md-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Kode Buku"
+              aria-label="First name"
+              name="kdbuku"
+            />
+          </div>
+          <div class="col-md-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Judul"
+              aria-label="Last name"
+              name="judul"
+            />
+          </div>
+
+          <div class="col-md-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Pengarang"
+              aria-label="First name"
+              name="pengarang"
+            />
+          </div>
+          <div class="col-md-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Penerbit"
+              aria-label="Last name"
+              name="penerbit"
+            />
+          </div>
+          <div class="col-md-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Jumlah"
+              aria-label="Last name"
+              name="jumlah"
+            />
+            <br />
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
